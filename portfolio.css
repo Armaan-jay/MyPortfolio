@@ -1,0 +1,378 @@
+/* Basic Styles */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #6941e0;
+    color: #000000;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Header and Navigation */
+.header-icon {
+    display: inline-block;  /* Ensures the image behaves like text */
+    margin-right: 1%;    /* Adjust margin as needed */
+    width: 30px;           /* Adjust width as needed */
+    height: 30px;          /* Adjust height as needed */
+    
+}
+
+header {
+    background: linear-gradient(45deg, #4527eb, #100068);
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideDown 1s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fcfcfc;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #b29806; /* Gold */
+    border-bottom: 2px solid #b29806;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    margin-left: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#darkModeToggle:hover {
+    background-color: #fff;
+    color: #5a5a5a;
+}
+
+/* Main Content */
+main {
+    padding: 6rem 1rem 1rem 1rem;
+}
+
+#intro {
+    padding: 20px;
+    background: linear-gradient(135deg, #7393fd, #1a1fb7);
+    border-radius: 10px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+#intro h2 {
+    font-size: 2.5em;
+    margin-top: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.profile-image {
+    max-width: 300px; /* Increased size */
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #f9ffa4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-10px);
+}
+
+body.dark-mode section {
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* Skills */
+.skill {
+    margin-bottom: 1rem;
+}
+
+.skill p {
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.progress-bar {
+    background: #ead4d4;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.progress {
+    background: linear-gradient(90deg, #0c998d, #0f766e);
+    height: 100%;
+    width: 0;
+    transition: width 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--skill-level) + '%');
+}
+
+/* Specific Skill Colors */
+.html-skill {
+    background: linear-gradient(90deg, #ff5733, #9b4800); /* HTML red shades */
+}
+
+.css-skill {
+    background: linear-gradient(90deg, #264de4, #2982ff); /* CSS blue shades */
+}
+
+.python-skill {
+    background: linear-gradient(90deg, #5db6ff, #254662); /* Python blue shades */
+}
+
+.c-skill {
+    background: linear-gradient(90deg, #ff5d5d, #a40101); /* C gray shades */
+}
+
+/* Projects Section */
+#projects {
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project {
+    background: #a600ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    padding: 1rem;
+    width: calc(33% - 2rem);
+    box-sizing: border-box;
+    text-align: center;
+    animation: slideUp 1s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+button.filter {
+    margin: 0.5rem;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #af4ca3;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+button.filter:hover {
+    background-color: #fff;
+    color: #af4ca3;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    10% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode #projects {
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a);
+}
+
+body.dark-mode .project {
+    background: #222;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .project img {
+    border: 1px solid #555;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #2cadee, #0c03bb);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #020202;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contactForm label {
+    font-weight: bold;
+    color: #000000;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus,
+#contactForm select:focus {
+    border-color: #8546f9;
+    box-shadow: 0 0 5px rgba(133, 70, 249, 0.5);
+    outline: none;
+}
+
+#contactForm button {
+    background: #090177;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: #6d38c6;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #0c0090;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0665b2;
+}
+
+/* Dark Mode Footer */
+body.dark-mode footer {
+    background-color:linear-gradient(45deg, #4527eb, #100068);
+    color: #b3b3b3;
+}
+
+body.dark-mode footer a {
+    color: #b3b3b3;
+}
+
+body.dark-mode footer a:hover {
+    color: #b29806;
+}
+
+/* End of Styles */
